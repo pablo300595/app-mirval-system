@@ -1,0 +1,19 @@
+<form class="login-card" [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="login-card-header">
+        <h2>Log In</h2>
+    </div>
+    <div class="login-card-body">
+        <input class="clean-inp" type="email" placeholder="Email Address" formControlName="email">
+        <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">
+            <p *ngIf="loginForm.get('email')?.hasError('required')" class="invalid">Email is required*</p>
+            <p *ngIf="loginForm.get('email')?.hasError('email')" class="invalid">Invalid email format*</p>
+        </div>
+        <input class="clean-inp" type="password" placeholder="Password" formControlName="password">
+        <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
+            <p *ngIf="loginForm.get('password')?.hasError('required')" class="invalid">Password is required*</p>
+        </div>
+        <button class="btn-log clean-btn">Log in</button>
+        <button type="button" class="btn-create clean-btn" (click)="goToRegisterPage()">Create your account</button>
+    </div>
+</form>
+

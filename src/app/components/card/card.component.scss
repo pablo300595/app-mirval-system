@@ -1,0 +1,42 @@
+@import './../../_mixins.scss';
+
+.card-container {
+    @include basic-flex(center, center);
+    @include width-height(10em, 15em);
+    background-color: rgb(236, 196, 196);
+    border-radius: 10px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.6);
+    // color: white;
+    padding: 2em;
+    font-family: Roboto;
+
+    .card-header {
+        @include basic-flex(center, center);
+        @include width-height(100%, 50%);
+        // background-color: rgb(0, 0, 0);
+
+    }
+
+    .card-body {
+        @include basic-flex(center, center);
+        @include width-height(100%, 50%);
+        // background-color: rgb(61, 29, 101);
+        img {
+            @include width-height(4em, 4em);
+        }
+    }
+}
+
+// Mobile
+// @media screen and (max-width: 767px) {
+//     .card-container {
+//         @include width-height(10em, 15em);
+//     }
+// }
+
+// Tablet
+// @media screen and (min-width: 768px) and (max-width: 1023px) {
+//     .card-container {
+//         @include width-height(10em, 15em);
+//     }
+// }

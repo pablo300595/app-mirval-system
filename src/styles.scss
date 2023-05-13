@@ -1,1 +1,120 @@
 /* You can add global styles to this file, and also import other style files */
+@import './app/mixins';
+
+html {
+    display: flex;
+    @include width-height(100vw, 100vh);
+}
+
+body {
+    @include width-height(inherit, inherit);
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+app-root {
+    @include width-height(inherit, inherit);
+    display: flex;
+
+    app-login-page {
+        @include basic-flex(center, center);
+        @include width-height(inherit, inherit);
+        // background-color: blue;
+
+        .page-content {
+            @include basic-flex(center, center);
+            @include width-height(inherit, inherit);
+            background: linear-gradient(60deg, #dddaec, rgb(79, 101, 214));
+            font-family: Roboto;
+            // background-color: rgb(130, 130, 172);
+
+            login-card {
+                @include basic-flex(center, center);
+                @include width-height(25%, 60%);
+                background-color: rgb(220, 220, 238);
+                border-radius: 0.2em;
+                box-shadow: 0 0 1em rgba(0, 0, 0, 0.8);
+            }
+        }
+
+    }
+
+    app-register-page {
+        @include width-height(inherit, inherit);
+        @include width-height(inherit, inherit);
+        background-color: rgb(255, 0, 0);
+    }
+}
+
+// mobile devices
+@media screen and (max-width: 767px) {
+    app-root {
+        app-login-page {
+            .page-content {
+                login-card {
+                    @include width-height(60%, 60%);
+                }
+            }
+        }
+        // app-register-page {}
+    }
+}
+
+// tabled devices
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    app-root {
+        app-login-page {
+            .page-content {
+                login-card {
+                    @include width-height(70%, 50%);
+                }
+            }
+        }
+        // app-register-page {}
+    }
+}
+
+/* ----------------------------------
+    Basic component styles 
+----------------------------------*/
+.clean-btn {
+    border-radius: 30px;
+    border: 1px solid;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    outline: none;
+    padding: 1em;
+    transition: ease .2s;
+    width: 60%;
+}
+
+.clean-btn:hover {
+    background: transparent;
+    border: #3F5EFB 1px solid;
+    color: #3F5EFB;
+}
+
+.clean-inp {
+    border: none;
+    border-bottom: 1px solid #d1d1d1;
+    outline: none;
+    padding: 1em;
+    width: 80%;
+}
+
+.clean-inp:hover {
+    border-bottom: 1px solid #3F5EFB;
+}
+
+.clean-inp:focus {
+    border-bottom: 1px solid #3F5EFB;
+}
+
+.invalid {
+    padding: 0;
+    margin: 0;
+    color: red;
+    font-size: 0.78em;
+}
