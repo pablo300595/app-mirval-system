@@ -1,0 +1,15 @@
+<div class="modal">
+    <div class="modal-content"
+        (click)="closeModal()"
+        [ngClass]="{
+                'error': (config$ | async)?.modalType === ErrorType, 
+                'success': (config$ | async)?.modalType === SuccessType,
+                'modal-leave ': (config$ | async)?.modalStatus === LeaveStatus
+            }"
+        >
+        <div class="modal-header">
+            <h1>{{(config$ | async)?.modalType| uppercase}}</h1>
+        </div>
+        <p>{{(config$ | async)?.modalMessage}}</p>
+    </div>
+</div>

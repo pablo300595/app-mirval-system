@@ -1,9 +1,4 @@
 import { Component } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { Environment } from 'src/app/environment';
-import { Image } from 'src/app/models/image';
-import { User } from 'src/app/models/user';
-import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
   selector: 'app-login-page',
@@ -12,10 +7,7 @@ import { UserService } from 'src/app/shared/services/user.service';
 })
 export class LoginPageComponent {
 
-  users$: Observable<User[]> = of([]);
-  cardImages: Image[] = Environment.images;
-
-  constructor(private userService: UserService) {}
+  constructor() {}
 
   ngOnInit() {
   }

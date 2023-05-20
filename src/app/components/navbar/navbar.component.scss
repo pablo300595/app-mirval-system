@@ -28,6 +28,11 @@ nav {
     }
 }
 
+a {
+    @include background-color-fontFamily(none, white, 'Gill Sans');
+    text-decoration: none;
+}
+
 // mobile devices
 @media screen and (max-width: 767px) {
     nav {

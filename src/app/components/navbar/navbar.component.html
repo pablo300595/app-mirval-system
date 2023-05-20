@@ -3,7 +3,7 @@
         <li><a routerLink="/">Home</a></li>
         <li><a routerLink="/about">About</a></li>
         <li><a routerLink="/contact">Contact</a></li>
-        <li><a routerLink="/contact" >{{(user$ | async)?.currentUser?.email}}</a></li>
-        <!-- <li><a routerLink="/contact" >{{(user$ | async) | json}}</a></li> -->
+        <li *ngIf="(user$ | async)?.currentUser?.email" routerLink="/config/auth"><a>Profile</a></li>
+        <li *ngIf="(user$ | async)?.currentUser?.email" (click)="logout()"><a>Sign out</a></li>
     </ul>
 </nav>

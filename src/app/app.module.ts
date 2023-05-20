@@ -5,17 +5,21 @@ import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { SharedModule } from './shared/common.module';
-import { Environment } from './environment';
 import { StoreModule } from '@ngrx/store';
-import { authReducer } from './auth/redux/auth.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
+import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+
+import { authReducer } from './auth/redux/auth.reducer';
+import { configReducer } from './config/redux/config.reducer';
+
+import { Environment } from './environment';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +29,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     provideAuth(() => getAuth()),
     StoreModule.forRoot({
       userData: authReducer,
+      configData: configReducer
     }),
     StoreDevtoolsModule.instrument(Environment.FB_DEVTOOLS_CONFIG),
     NavbarComponent
