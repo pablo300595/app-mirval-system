@@ -1,25 +1,22 @@
-/**
- * Import function triggers from their respective submodules:
- *
- * import {onCall} from "firebase-functions/v2/https";
- * import {onDocumentWritten} from "firebase-functions/v2/firestore";
- *
- * See a full list of supported triggers at https://firebase.google.com/docs/functions
- */
-
-
-// import {onRequest} from "firebase-functions/v2/https";
-// import * as logger from "firebase-functions/logger";
-
-// console.log(onRequest);
-// console.log(logger.info);
 import * as functions from "firebase-functions";
 import * as admin from "firebase-admin";
 import * as express from "express";
+import * as cors from "cors";
+
 
 admin.initializeApp();
 
 const app = express();
+
+app.use(cors());
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "*");
+  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
+  res.header("Allow", "GET, POST, OPTIONS, PUT, DELETE");
+  next();
+});
 
 app.get("/", (req, res) => {
   const envConfig = {

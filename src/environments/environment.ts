@@ -1,4 +1,5 @@
-import { Image } from "./models/image";
+import { Image } from "../app/models/image";
+import { environment as env } from './../app/env';
 
 const images: Image[] = [
     {
@@ -38,6 +39,7 @@ const images: Image[] = [
 export const environment = {
     production: false,
     images,
+    FB_CONFIG: env.FB_CONFIG,
     FB_DEVTOOLS_CONFIG: {
         maxAge: 25,       // Retains last 25 states
         logOnly: false,   // Restrict extension to log-only mode

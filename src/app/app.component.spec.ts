@@ -5,7 +5,7 @@ import { SharedModule } from './shared/shared.module';
 
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
-import { environment } from './environment';
+import { environment } from '../environments/environment';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { StoreModule } from '@ngrx/store';
 import { authReducer } from './auth/redux/auth.reducer';

@@ -8,7 +8,8 @@ export class SecretsService {
   private readonly environmentUrl: string;
 
   constructor(private http: HttpClient) {
-    this.environmentUrl = '/__/firebase/init.json';
+    // this.environmentUrl = '/__/firebase/init.json';
+    this.environmentUrl = 'https://us-central1-todo-f0b3a.cloudfunctions.net/environment';
   }
   
   getConfig() {
