@@ -1,42 +1,56 @@
 import { Image } from "./models/image";
 
-const images: Image[] = [
-    {
-        name: 'builder-dragon',
-        url: 'https://storage.cloud.google.com/landscapes-bucket/assets/builder-dragon.jpeg'
-    },
-    {
-        name: 'druid',
-        url: 'https://storage.cloud.google.com/landscapes-bucket/assets/druid.jpeg'
-    },
-    {
-        name: 'magician-alternative',
-        url: 'https://storage.cloud.google.com/landscapes-bucket/assets/magician-alternative.jpeg'
-    },
-    {
-        name: 'magician',
-        url: 'https://storage.cloud.google.com/landscapes-bucket/assets/magician.jpg'
-    },
-    {
-        name: 'paladdin-alternative',
-        url: 'https://storage.cloud.google.com/landscapes-bucket/assets/paladdin-alternative.jpeg'
-    },
-    {
-        name: 'paladdin',
-        url: 'https://storage.cloud.google.com/landscapes-bucket/assets/paladdin.jpeg'
-    },
-    {
-        name: 'water-dragon-alternative',
-        url: 'https://storage.cloud.google.com/landscapes-bucket/assets/water-dragon-alternative.jpeg'
-    },
-    {
-        name: 'water-dragon',
-        url: 'https://storage.cloud.google.com/landscapes-bucket/assets/water-dragon.jpeg'
-    }
-];
+// const images: Image[] = [
+//     {
+//         name: 'builder-dragon',
+//         url: 'https://storage.cloud.google.com/landscapes-bucket/assets/builder-dragon.jpeg'
+//     },
+//     {
+//         name: 'builder-dragon',
+//         url: 'https://storage.cloud.google.com/landscapes-bucket/assets/builder-dragon.jpeg'
+//     },
+//     {
+//         name: 'druid',
+//         url: 'https://storage.cloud.google.com/landscapes-bucket/assets/druid.jpeg'
+//     },
+//     {
+//         name: 'magician-alternative',
+//         url: 'https://storage.cloud.google.com/landscapes-bucket/assets/magician-alternative.jpeg'
+//     },
+//     {
+//         name: 'magician',
+//         url: 'https://storage.cloud.google.com/landscapes-bucket/assets/magician.jpg'
+//     },
+//     {
+//         name: 'paladdin-alternative',
+//         url: 'https://storage.cloud.google.com/landscapes-bucket/assets/paladdin-alternative.jpeg'
+//     },
+//     {
+//         name: 'paladdin',
+//         url: 'https://storage.cloud.google.com/landscapes-bucket/assets/paladdin.jpeg'
+//     },
+//     {
+//         name: 'water-dragon-alternative',
+//         url: 'https://storage.cloud.google.com/landscapes-bucket/assets/water-dragon-alternative.jpeg'
+//     },
+//     {
+//         name: 'water-dragon',
+//         url: 'https://storage.cloud.google.com/landscapes-bucket/assets/water-dragon.jpeg'
+//     }
+// ];
+
+export const logoImage: Image = {
+    name: 'brand-logo',
+    url: 'https://storage.cloud.google.com/landscapes-bucket/assets/mirval-systems-logo.png'
+};
+
+export const aboutImage: Image = {
+    name: 'druid',
+    url: 'https://storage.cloud.google.com/landscapes-bucket/assets/druid.jpeg'
+};
 
 export const environment = {
-    images,
+    logoImage,
     FB_CONFIG: {
         apiKey: 'AIzaSyB5VNsikO1tV61w2vs14qE6nmtww1zIf1E',
         authDomain: 'todo-f0b3a.firebaseapp.com',
