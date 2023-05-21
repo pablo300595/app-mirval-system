@@ -1,5 +1,4 @@
-import { Image } from "../app/models/image";
-import { environment as env } from './../app/env';
+import { Image } from "./models/image";
 
 const images: Image[] = [
     {
@@ -37,9 +36,16 @@ const images: Image[] = [
 ];
 
 export const environment = {
-    production: false,
     images,
-    FB_CONFIG: env.FB_CONFIG,
+    FB_CONFIG: {
+        apiKey: 'AIzaSyB5VNsikO1tV61w2vs14qE6nmtww1zIf1E',
+        authDomain: 'todo-f0b3a.firebaseapp.com',
+        projectId: 'todo-f0b3a',
+        storageBucket: 'todo-f0b3a.appspot.com',
+        messagingSenderId: '370198566044',
+        appId: '1:370198566044:web:df34a9bf12c537e5da8959',
+        measurementId: 'G-GHW52VZJ6N'
+    },
     FB_DEVTOOLS_CONFIG: {
         maxAge: 25,       // Retains last 25 states
         logOnly: false,   // Restrict extension to log-only mode
