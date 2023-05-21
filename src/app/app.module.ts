@@ -57,7 +57,6 @@ export function configFactory(secretsService: SecretsService) {
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    // provideFirebaseApp(() => initializeApp(environment.FB_CONFIG)),
     provideAuth(() => getAuth()),
     StoreModule.forRoot({
       userData: authReducer,
