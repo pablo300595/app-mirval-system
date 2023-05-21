@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app-mirval-system';
+  constructor() {
+    console.log('New version 0.0.1');
+  }
 }

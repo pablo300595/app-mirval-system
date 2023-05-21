@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SharedRoutingModule } from './common-routing.module';
-import { CardComponent } from '../components/card/card.component';
+import { SharedRoutingModule } from './shared-routing.module';
 
 
 @NgModule({

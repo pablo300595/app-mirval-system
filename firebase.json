@@ -8,6 +8,10 @@
     ],
     "rewrites": [
       {
+        "source": "/__/firebase/init.json",
+        "function": "environment"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }
