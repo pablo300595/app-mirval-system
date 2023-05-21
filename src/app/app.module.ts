@@ -16,28 +16,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { authReducer } from './auth/redux/auth.reducer';
 import { configReducer } from './config/redux/config.reducer';
 
-import { environment } from '../environments/environment';
-// import { APP_INITIALIZER } from '@angular/core';
-// import { SecretsService } from './shared/services/secrets.service';
-// import { first } from 'rxjs';
-
-// export function configFactory(secretsService: SecretsService) {
-//   return () =>
-//     secretsService.getConfig().pipe(first()).toPromise().then((config) => {
-//       const appConfig = {
-//         apiKey: config.apiKeyconfig,
-//         authDomain: config.authDomain,
-//         projectId: config.projectId,
-//         storageBucket: config.storageBucket,
-//         messagingSenderId: config.messagingSenderId,
-//         appId: config.appId,
-//         measurementId: config.measurementId
-//       };
-
-//       provideFirebaseApp(() => initializeApp(appConfig));
-//     });
-// }
-
+import { environment } from './environment';
 
 @NgModule({
   declarations: [
@@ -57,15 +36,7 @@ import { environment } from '../environments/environment';
     StoreDevtoolsModule.instrument(environment.FB_DEVTOOLS_CONFIG),
     NavbarComponent
   ],
-  providers: [
-    // SecretsService,
-    // {
-    //   provide: APP_INITIALIZER,
-    //   useFactory: configFactory,
-    //   deps: [SecretsService],
-    //   multi: true,
-    // }
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
