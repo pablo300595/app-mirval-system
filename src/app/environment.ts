@@ -35,16 +35,17 @@ const images: Image[] = [
     }
 ];
 
-export const Environment = {
+export const environment = {
+    production: false,
     images,
     FB_CONFIG: {
-        apiKey: 'AIzaSyB5VNsikO1tV61w2vs14qE6nmtww1zIf1E',
-        authDomain: 'todo-f0b3a.firebaseapp.com',
-        projectId: 'todo-f0b3a',
-        storageBucket: 'todo-f0b3a.appspot.com',
-        messagingSenderId: '370198566044',
-        appId: '1:370198566044:web:df34a9bf12c537e5da8959',
-        measurementId: 'G-GHW52VZJ6N'
+        apiKey: process.env['todo.api_key'],
+        authDomain: process.env['todo.auth_domain'],
+        projectId: process.env['todo.project_id'],
+        storageBucket: process.env['todo.storage_bucket'],
+        messagingSenderId: process.env['todo.messaging_sender_id'],
+        appId: process.env['todo.app_id'],
+        measurementId: process.env['todo.measurement_id'],
     },
     FB_DEVTOOLS_CONFIG: {
         maxAge: 25,       // Retains last 25 states

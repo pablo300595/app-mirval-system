@@ -15,7 +15,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { authReducer } from './auth/redux/auth.reducer';
 import { configReducer } from './config/redux/config.reducer';
 
-import { Environment } from './environment';
+import { environment } from './environment';
 
 @NgModule({
   declarations: [
@@ -25,13 +25,13 @@ import { Environment } from './environment';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    provideFirebaseApp(() => initializeApp(Environment.FB_CONFIG)),
+    provideFirebaseApp(() => initializeApp(environment.FB_CONFIG)),
     provideAuth(() => getAuth()),
     StoreModule.forRoot({
       userData: authReducer,
       configData: configReducer
     }),
-    StoreDevtoolsModule.instrument(Environment.FB_DEVTOOLS_CONFIG),
+    StoreDevtoolsModule.instrument(environment.FB_DEVTOOLS_CONFIG),
     NavbarComponent
   ],
   providers: [],

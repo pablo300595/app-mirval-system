@@ -5,7 +5,7 @@ import { SharedModule } from './shared/common.module';
 
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
-import { Environment } from './environment';
+import { environment } from './environment';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { StoreModule } from '@ngrx/store';
 import { authReducer } from './auth/redux/auth.reducer';
@@ -17,7 +17,7 @@ describe('AppComponent', () => {
       imports: [
         RouterTestingModule,
         SharedModule,
-        provideFirebaseApp(() => initializeApp(Environment.FB_CONFIG)),
+        provideFirebaseApp(() => initializeApp(environment.FB_CONFIG)),
         provideAuth(() => getAuth()),
         StoreModule.forRoot({
           userData: authReducer,
