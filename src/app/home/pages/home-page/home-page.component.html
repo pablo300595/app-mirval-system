@@ -13,6 +13,6 @@
         One Line of Code at a Time
     </span>
 
-    <button type="button" class="clean-btn" (click)="goToLoginPage()">Login</button>
-    <button type="button" class="clean-btn" (click)="goToRegisterPage()">Register</button>
+    <button *ngIf="!((user$ | async)?.currentUser?.email)" type="button" class="clean-btn" (click)="goToLoginPage()">Login</button>
+    <button *ngIf="!((user$ | async)?.currentUser?.email)" type="button" class="clean-btn" (click)="goToRegisterPage()">Register</button>
 </div>

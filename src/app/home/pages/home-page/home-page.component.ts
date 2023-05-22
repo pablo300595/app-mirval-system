@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
+import { Auth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
   selector: 'app-home-page',
@@ -7,7 +10,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent {
-  constructor(private router: Router) {}
+  user$: Observable<Auth> = this.userService.getCurrentUser();
+  
+  constructor(
+    private router: Router,
+    private userService: UserService
+  ) {}
 
   goToLoginPage() {
     this.router.navigateByUrl('/auth/login');
