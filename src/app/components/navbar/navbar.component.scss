@@ -51,7 +51,7 @@ a {
 @media screen and (max-width: 767px) {
     nav {
         .logo {
-            @include width-height(30%, 100%);
+            @include width-height(40%, 100%);
             img {
                 @include width-height(30px, 30px);
             }

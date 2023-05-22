@@ -49,6 +49,11 @@ export const aboutImage: Image = {
     url: 'https://storage.cloud.google.com/landscapes-bucket/assets/druid.jpeg'
 };
 
+export const contactImage: Image = {
+    name: 'war-background',
+    url: 'https://storage.googleapis.com/landscapes-bucket/assets/war-background.png'
+};
+
 export const environment = {
     logoImage,
     FB_CONFIG: {
