@@ -41,12 +41,12 @@ import { Image } from "./models/image";
 
 export const logoImage: Image = {
     name: 'brand-logo',
-    url: 'https://storage.cloud.google.com/landscapes-bucket/assets/mirval-systems-logo.png'
+    url: 'https://storage.googleapis.com/landscapes-bucket/assets/mirval-systems-logo.png'
 };
 
 export const aboutImage: Image = {
     name: 'druid',
-    url: 'https://storage.cloud.google.com/landscapes-bucket/assets/druid.jpeg'
+    url: 'https://storage.googleapis.com/landscapes-bucket/assets/druid.jpeg'
 };
 
 export const contactImage: Image = {
