@@ -8,6 +8,7 @@ import { PasswordResetPageComponent } from './pages/password-reset-page/password
 import { CardComponent } from '../components/card/card.component';
 import { LoginCardComponent } from './components/login-card/login-card.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegisterCardComponent } from './components/register-card/register-card.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LoginPageComponent,
     RegisterPageComponent,
     PasswordResetPageComponent,
-    LoginCardComponent
+    LoginCardComponent,
+    RegisterCardComponent
   ],
   imports: [
     CommonModule,

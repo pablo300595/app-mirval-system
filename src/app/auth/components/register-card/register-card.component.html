@@ -1,0 +1,35 @@
+<form class="register-card" [formGroup]="registerForm" (ngSubmit)="registerUser()">
+    <div class="register-card-header">
+        <h2>Register</h2>
+    </div>
+    <div class="register-card-body">
+        <!--User Email-->
+        <input class="clean-inp" type="email" placeholder="Email Address" formControlName="email">
+        <div
+            *ngIf="registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)">
+            <p *ngIf="registerForm.get('email')?.hasError('required')" class="invalid">Email is required*</p>
+            <p *ngIf="registerForm.get('email')?.hasError('email')" class="invalid">Invalid email format*</p>
+        </div>
+        <!--User Password-->
+        <input class="clean-inp" type="password" placeholder="Password" formControlName="password">
+        <div
+            *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)">
+            <p *ngIf="registerForm.get('password')?.hasError('required')" class="invalid">Password is required*</p>
+        </div>
+        <!--Confirm Password-->
+        <input class="clean-inp" type="password" placeholder="Confirm Password" formControlName="confirmPassword">
+        <div class="error-container">
+            <div
+                *ngIf="registerForm.get('confirmPassword')?.invalid && (registerForm.get('confirmPassword')?.dirty || registerForm.get('confirmPassword')?.touched)">
+                <p *ngIf="registerForm.get('confirmPassword')?.hasError('required')" class="invalid">Confirm Password is
+                    required*</p>
+            </div>
+            <div *ngIf="(registerForm.get('confirmPassword')?.dirty || registerForm.get('confirmPassword')?.touched) &&
+                (registerForm.get('password')?.valid)">
+                <p *ngIf="registerForm.hasError('passwordsMismatch')" class="invalid">Password does not match*</p>
+            </div>
+        </div>
+        <!--Actions-->
+        <button type="button" class="btn-main clean-btn" [disabled]="registerForm.invalid && registerForm.touched">Register</button>
+    </div>
+</form>

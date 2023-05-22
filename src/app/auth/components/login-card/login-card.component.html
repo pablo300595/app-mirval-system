@@ -12,7 +12,7 @@
         <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
             <p *ngIf="loginForm.get('password')?.hasError('required')" class="invalid">Password is required*</p>
         </div>
-        <button class="btn-log clean-btn">Log in</button>
+        <button class="btn-main clean-btn">Log in</button>
         <button type="button" class="clean-btn" (click)="goToRegisterPage()">Create your account</button>
     </div>
 </form>

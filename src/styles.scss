@@ -41,9 +41,24 @@ app-root {
     }
 
     app-register-page {
+        @include basic-flex(center, center);
         @include width-height(inherit, inherit);
-        @include width-height(inherit, inherit);
-        background-color: rgb(255, 0, 0);
+        // background-color: rgb(255, 0, 0);
+
+        .page-content {
+            @include basic-flex(center, center);
+            @include width-height(inherit, inherit);
+            background: linear-gradient(60deg, #dddaec, rgb(79, 101, 214));
+            font-family: Roboto;
+
+            register-card {
+                @include basic-flex(center, center);
+                @include width-height(25%, 60%);
+                background-color: rgb(220, 220, 238);
+                border-radius: 0.2em;
+                box-shadow: 0 0 1em rgba(0, 0, 0, 0.8);
+            }
+        }
     }
 
     app-about-page {
@@ -71,11 +86,18 @@ app-root {
         app-login-page {
             .page-content {
                 login-card {
-                    @include width-height(60%, 60%);
+                    @include width-height(80%, 60%);
                 }
             }
         }
-        // app-register-page {}
+
+        app-register-page {
+            .page-content {
+                register-card {
+                    @include width-height(80%, 60%);
+                }
+            }
+        }
     }
 }
 
@@ -89,7 +111,13 @@ app-root {
                 }
             }
         }
-        // app-register-page {}
+        app-register-page {
+            .page-content {
+                register-card {
+                    @include width-height(70%, 50%);
+                }
+            }
+        }
     }
 }
 
@@ -143,4 +171,9 @@ app-root {
 
 .success {
     background-color: #347914;
+}
+
+.btn-main {
+    background: red;
+    color: #fff;
 }
