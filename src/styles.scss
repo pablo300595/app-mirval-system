@@ -57,6 +57,12 @@ app-root {
         @include width-height(inherit, inherit);
         background: linear-gradient(180deg, #0c0432f7, rgb(6, 10, 32));
     }
+
+    app-home-page {
+        @include width-height(inherit, inherit);
+        @include width-height(inherit, inherit);
+        background: linear-gradient(180deg, #0c0432f7, rgb(6, 10, 32));
+    }
 }
 
 // mobile devices

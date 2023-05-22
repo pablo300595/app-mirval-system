@@ -9,7 +9,11 @@ import { Router } from '@angular/router';
 export class HomePageComponent {
   constructor(private router: Router) {}
 
-  redirectToLogin() {
+  goToLoginPage() {
     this.router.navigateByUrl('/auth/login');
+  }
+
+  goToRegisterPage() {
+    this.router.navigateByUrl('/auth/register');
   }
 }

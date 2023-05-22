@@ -18,7 +18,7 @@ h2 {
     .login-card-header {
         @include basic-flex(center, center);
         @include width-height(100%, 20%);
-        background-image: url('https://storage.cloud.google.com/landscapes-bucket/assets/builder-dragon.jpeg');
+        background-image: url('https://storage.googleapis.com/landscapes-bucket/assets/builder-dragon.jpeg');
         background-size: cover;
         background-position: auto;
         // background-color: black;
