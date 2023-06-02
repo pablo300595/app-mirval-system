@@ -5,6 +5,6 @@
         <li routerLink="/home/about"><a>About</a></li>
         <li routerLink="home/contact"><a>Contact</a></li>
         <li *ngIf="(user$ | async)?.currentUser?.email" routerLink="/config/auth"><a>Profile</a></li>
-        <li *ngIf="(user$ | async)?.currentUser?.email" (click)="logout()"><a>Sign out</a></li>
+        <li *ngIf="(user$ | async)?.currentUser?.email" (click)="logout()"><a>Sign out</a></li> 
     </ul>
 </nav>
