@@ -1,4 +1,9 @@
+import { UserCredential } from '@angular/fire/auth';
+
 export interface AuthState {
     email: string,
-    isActive: boolean
+    password: string,
+    logoutSuccess: boolean,
+    loginSuccess: boolean,
+    userCredential: UserCredential
 }

@@ -1,0 +1,33 @@
+@import './../../../../mixins';
+
+.btn-log {
+    background: red;
+    color: #fff;
+}
+
+h2 {
+    box-shadow: 0 0.1em 0.1em rgba(0, 0, 0, 0.8);
+    background: black;
+}
+
+.login-card {
+    @include basic-flex(center, center);
+    @include width-height(100%, 100%);
+    background-color: inherit;
+
+    .login-card-header {
+        @include basic-flex(center, center);
+        @include width-height(100%, 20%);
+        background-image: url('https://storage.googleapis.com/landscapes-bucket/assets/builder-dragon.jpeg');
+        background-size: cover;
+        background-position: auto;
+        // background-color: black;
+        color: white;
+    }
+
+    .login-card-body {
+        @include basic-flex(center, space-evenly);
+        @include width-height(100%, 80%);
+        background-color: rgb(244, 232, 232);
+    }
+}

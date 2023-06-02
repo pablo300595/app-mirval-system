@@ -1,0 +1,33 @@
+@import './../../../../mixins';
+
+h2 {
+    box-shadow: 0 0.1em 0.1em rgba(0, 0, 0, 0.8);
+    background: black;
+}
+
+.error-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-card {
+    @include basic-flex(center, center);
+    @include width-height(100%, 100%);
+    background-color: inherit;
+
+    .register-card-header {
+        @include basic-flex(center, center);
+        @include width-height(100%, 20%);
+        background-image: url('https://storage.googleapis.com/landscapes-bucket/assets/magician.jpg');
+        background-size: cover;
+        background-position: auto;
+        // background-color: black;
+        color: white;
+    }
+
+    .register-card-body {
+        @include basic-flex(center, space-evenly);
+        @include width-height(100%, 80%);
+        background-color: rgb(244, 232, 232);
+    }
+}

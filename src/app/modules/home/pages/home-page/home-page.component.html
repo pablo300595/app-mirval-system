@@ -1,0 +1,20 @@
+<div class="home-container">
+    <h1>Welcome to Mirval Systems</h1>
+    
+    <span class="code-text">
+        Unleashing Possibilities, One Line of Code at a Time
+    </span>
+
+    <span class="code-text-mobile">
+        Unleashing Possibilities,
+    </span>
+
+    <span class="code-text-mobile">
+        One Line of Code at a Time
+    </span>
+
+    <ng-container *ngIf="!((user$ | async)?.[0]?.currentUser?.email)">
+        <button type="button" class="clean-btn" (click)="goToLoginPage()">Login</button>
+        <button type="button" class="clean-btn" (click)="goToRegisterPage()">Register</button>
+    </ng-container>
+</div>

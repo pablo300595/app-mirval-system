@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ModalService } from 'src/app/shared/services/modal.service';
+import { ModalService } from 'src/app/modules/shared/services/modal.service';
 import { ModalTypes, ModalStatus, ModalEvents } from './../../models/enums/modal';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/models/state/app-state';
 import { Observable } from 'rxjs';
 import { ConfigState } from 'src/app/models/state/config-state';
 
-import * as configActions from './../../config/redux/config.actions';
+import * as configActions from '../../modules/config/store/actions/config.actions';
 
 @Component({
   standalone: true,

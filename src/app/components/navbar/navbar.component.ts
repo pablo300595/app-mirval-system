@@ -1,12 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Auth } from '@angular/fire/auth';
-import { Router, RouterModule } from '@angular/router';
-import { Observable, Subscription, of } from 'rxjs';
-import { environment } from 'src/app/environment';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { AppState } from 'src/app/models/state/app-state';
 import { Image } from 'src/app/models/image';
-import { UserService } from 'src/app/shared/services/user.service';
-
+import { UserService } from 'src/app/modules/shared/services/user.service';
+import { environment } from 'src/app/environment';
+import * as authActions from '../../modules/auth/store/actions/auth.actions';
+import { RouterModule } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -20,23 +22,15 @@ import { UserService } from 'src/app/shared/services/user.service';
 })
 export class NavbarComponent {
   user$: Observable<Auth> = this.userService.getCurrentUser();
-  subscription: Subscription = new Subscription();
-
   brandLogo: Image = environment.logoImage;
 
   constructor(
-    private router: Router,
-    private userService: UserService
+    private userService: UserService,
+    private store: Store<AppState>
   ) { }
 
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
-
   logout() {
-    this.subscription = this.userService.logout().subscribe(() => {
-      this.router.navigateByUrl('/login');
-    });
+    this.store.dispatch(authActions.logout());
   }
 
 }

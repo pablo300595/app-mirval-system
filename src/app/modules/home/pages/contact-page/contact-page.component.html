@@ -1,0 +1,7 @@
+<div class="contact-container">
+    <ng-container *ngIf="((data$ | async))">
+        <img src="{{ contactImage.url }}" alt="{{ contactImage.name }}" >
+        <h1>Contact Us</h1>
+        <p>Or come and have a coffe with us to <strong>support@mirval.net</strong></p>
+    </ng-container>
+</div>

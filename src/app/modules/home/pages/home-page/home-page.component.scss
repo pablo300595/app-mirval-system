@@ -1,0 +1,66 @@
+@import './../../../../mixins';
+
+.home-container {
+    @include basic-flex(center, center);
+    @include width-height(100%, 100%);
+    overflow: scroll;
+    color: white;
+    font-family: monospace;
+    font-size: 2em;
+    
+    h1 {
+        @include basic-flex(center, center);
+        @include width-height(90%, 40%);
+        @include clear-margin-settings();
+        text-align: center;
+    }
+    
+    span {
+        white-space: nowrap;
+        border-right: 4px solid;
+        width: 52ch;
+        animation: typing 2s steps(52), blink .5s infinite step-end alternate;
+        overflow: hidden;
+        margin-bottom: 2em;
+    }
+
+    .code-text-mobile {
+        display: none;
+    }
+    
+    button {
+        margin-bottom: 2em;
+    }
+}
+
+
+@keyframes typing {
+    from { width: 0 }
+}
+
+@keyframes blink {
+    50% { border-color: transparent }
+}
+
+@media screen and (max-width: 767px) {
+    .home-container {
+        @include basic-flex(center, center); 
+    }
+
+    span {
+        @include basic-flex(center, center);
+        @include width-height(50%, 2%);
+        font-size: 0.6em;
+    }
+    
+    .code-text {
+        display: none;
+        animation: typing 2s steps(25), blink .5s infinite step-end alternate;
+    }
+
+    .code-text-mobile {
+        display: flex;
+        max-width: 60%;
+        animation: typing 2s steps(26), blink .5s infinite step-end alternate;
+    }
+}
