@@ -9,17 +9,19 @@ interface CustomAuth extends Partial<Auth> {
 
 describe('AuthService', () => {
   let authService: AuthService;
-  let authMock: CustomAuth;
+  // let authMock: CustomAuth;
+  let authSpy: jasmine.SpyObj<Auth>;
 
   beforeEach(() => {
-    authMock = jasmine.createSpyObj('authMock', ['signInWithEmailAndPassword', 'signOut']);
-    authMock.signInWithEmailAndPassword.and.returnValue(Promise.resolve({} as UserCredential));
-    authMock.signOut.and.returnValue(Promise.resolve());
+    // authMock = jasmine.createSpyObj('authMock', ['signInWithEmailAndPassword', 'signOut']);
+    // authMock.signInWithEmailAndPassword.and.returnValue(Promise.resolve({} as UserCredential));
+    // authMock.signOut.and.returnValue(Promise.resolve());
+
 
     TestBed.configureTestingModule({
       providers: [
         AuthService,
-        { provide: Auth, useValue: authMock }
+        { provide: Auth, useValue: {} }
       ]
     });
     authService = TestBed.inject(AuthService);
@@ -30,6 +32,8 @@ describe('AuthService', () => {
     expect(authService).toBeTruthy();
   });
 
-
+  fit('should get correct message', () => {
+    expect(authService.getMessage()).toBe('message');
+  })
 
 });

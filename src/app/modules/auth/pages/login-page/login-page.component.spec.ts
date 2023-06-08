@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LoginPageComponent } from './login-page.component';
 import { LoginCardComponent } from '../../components/login-card/login-card.component';
-import { UserService } from 'src/app/modules/shared/services/auth.service';
+import { AuthService } from 'src/app/modules/shared/services/auth.service';
 
 import { Auth } from '@angular/fire/auth';
 import { Store } from '@ngrx/store';
@@ -16,7 +16,7 @@ describe('LoginPageComponent', () => {
       declarations: [ LoginPageComponent, LoginCardComponent ],
       imports: [ ReactiveFormsModule ],
       providers: [
-        UserService,
+        AuthService,
         { provide: Auth, useValue: {} },
         { provide: Store, useValue: {} }
       ]

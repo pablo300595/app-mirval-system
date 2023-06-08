@@ -42,4 +42,8 @@ export class AuthService {
     return from(signOut(this.auth));
   }
 
+  getMessage(): string {
+    return 'message';
+  }
+
 }

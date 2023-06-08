@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 
 import { LoginCardComponent } from './login-card.component';
 import { ModalService } from 'src/app/modules/shared/services/modal.service';
-import { UserService } from 'src/app/modules/shared/services/auth.service';
+import { AuthService } from 'src/app/modules/shared/services/auth.service';
 import { AppState } from 'src/app/models/state/app-state';
 import { Router } from '@angular/router';
 
@@ -18,12 +18,12 @@ xdescribe('LoginCardComponent', () => {
   let component: LoginCardComponent;
   let fixture: ComponentFixture<LoginCardComponent>;
   let compiled: any;
-  let userService: UserService;
+  let authService: AuthService;
   let modalService: ModalService;
   let store: Store<AppState>;
   let router: Router;
 
-  const userServiceSpy = jasmine.createSpyObj('UserService', ['login']);
+  const authServiceSpy = jasmine.createSpyObj('AuthService', ['login']);
   const modalMessageSpy = {
     getEvent: jasmine.createSpy('getEvent').and.returnValue(of('')),
     removeModal: jasmine.createSpy('removeModal'),
@@ -33,15 +33,15 @@ xdescribe('LoginCardComponent', () => {
   const storeSpy = jasmine.createSpyObj('Store', ['dispatch']);
 
   beforeEach(async () => {
-    userServiceSpy.login.and.returnValue(of({ user: null, credential: null }));
+    authServiceSpy.login.and.returnValue(of({ user: null, credential: null }));
 
     await TestBed.configureTestingModule({
       declarations: [LoginCardComponent],
       imports: [ReactiveFormsModule, FormsModule, RouterTestingModule],
       providers: [
         {
-          provide: UserService,
-          useValue: userServiceSpy
+          provide: AuthService,
+          useValue: authServiceSpy
         },
         {
           provide: Router,
@@ -62,12 +62,12 @@ xdescribe('LoginCardComponent', () => {
     router = TestBed.inject(Router);
     compiled = fixture.nativeElement;
     component = fixture.componentInstance;
-    userService = TestBed.inject(UserService) as jasmine.SpyObj<any>;
+    authService = TestBed.inject(AuthService) as jasmine.SpyObj<any>;
     modalService = TestBed.inject(ModalService);
     store = TestBed.inject(Store);
     fixture.detectChanges();
 
-    userServiceSpy.login.calls.reset();
+    authServiceSpy.login.calls.reset();
     storeSpy.dispatch.calls.reset();
     routerSpy.navigateByUrl.calls.reset();
   });
@@ -103,7 +103,7 @@ xdescribe('LoginCardComponent', () => {
     component.loginForm.setValue(loginFormValue);
     component.login();
 
-    expect(userService.login).toHaveBeenCalledWith(loginFormValue);
+    expect(authService.login).toHaveBeenCalledWith(loginFormValue);
   });
 
   // it('should dispatch actions and navigate when login is successful', fakeAsync(() => {
