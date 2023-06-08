@@ -5,11 +5,12 @@ import { SharedModule } from './modules/shared/shared.module';
 
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
-import { environment } from '../environments/environment';
+
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { StoreModule } from '@ngrx/store';
 import { authReducer } from './modules/config/store/reducers/auth.reducer';
 import { configReducer } from './modules/auth/store/reducers/config.reducer';
+import { environment } from './environment';
 
 describe('AppComponent', () => {
   beforeEach(async () => {

@@ -1,6 +1,15 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AboutPageComponent } from './about-page.component';
+import { ActivatedRoute } from '@angular/router';
+
+const mockActivatedRoute = {
+  snapshot: {
+    paramMap: {
+      get: (param: string) => 'test_param' // Replace 'test_param' with your desired parameter value
+    }
+  }
+};
 
 describe('AboutPageComponent', () => {
   let component: AboutPageComponent;
@@ -8,7 +17,10 @@ describe('AboutPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AboutPageComponent ]
+      declarations: [ AboutPageComponent ],
+      providers: [
+        { provide: ActivatedRoute, useValue: mockActivatedRoute }
+      ]
     })
     .compileComponents();
 

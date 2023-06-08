@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { map, exhaustMap } from 'rxjs/operators';
 import { AuthState } from 'src/app/models/state/auth-state';
-import { UserService } from 'src/app/modules/shared/services/user.service';
+import { AuthService } from 'src/app/modules/shared/services/auth.service';
 import { UserCredential } from '@angular/fire/auth';
 import { Action } from '../../../../models/enums/action';
 
@@ -14,7 +14,7 @@ export class AuthEffects {
 
     login$ = createEffect(() => this.actions$.pipe(
         ofType(Action.LoginAction),
-        exhaustMap((action: AuthState) => this.userService.login({ email: action.email, password: action.password })
+        exhaustMap((action: AuthState) => this.authService.login({ email: action.email, password: action.password })
             .pipe(
                 map((userCredential: UserCredential) => {
                     const newUserCredential = JSON.parse(JSON.stringify(userCredential));
@@ -30,7 +30,7 @@ export class AuthEffects {
 
     logout$ = createEffect(() => this.actions$.pipe(
         ofType(Action.LogoutAction),
-        exhaustMap(() => this.userService.logout()
+        exhaustMap(() => this.authService.logout()
             .pipe(
                 map(() => {
                     this.router.navigateByUrl(this.loginPageRoute);
@@ -58,7 +58,7 @@ export class AuthEffects {
 
     constructor(
         private actions$: Actions,
-        private userService: UserService,
+        private authService: AuthService,
         private router: Router
     ) { }
 }

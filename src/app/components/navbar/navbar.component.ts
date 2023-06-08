@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState } from 'src/app/models/state/app-state';
 import { Image } from 'src/app/models/image';
-import { UserService } from 'src/app/modules/shared/services/user.service';
+import { AuthService } from 'src/app/modules/shared/services/auth.service';
 import { environment } from 'src/app/environment';
 import * as authActions from '../../modules/auth/store/actions/auth.actions';
 import { RouterModule } from '@angular/router';
@@ -21,11 +21,11 @@ import { RouterModule } from '@angular/router';
   ]
 })
 export class NavbarComponent {
-  user$: Observable<Auth> = this.userService.getCurrentUser();
+  user$: Observable<Auth> = this.authService.getCurrentUser();
   brandLogo: Image = environment.logoImage;
 
   constructor(
-    private userService: UserService,
+    private authService: AuthService,
     private store: Store<AppState>
   ) { }
 

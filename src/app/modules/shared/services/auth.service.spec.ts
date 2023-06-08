@@ -1,16 +1,14 @@
 import { TestBed } from '@angular/core/testing';
-import { UserService } from './user.service';
+import { AuthService } from './auth.service';
 import { Auth, User, UserCredential, UserInfo, Unsubscribe, NextOrObserver, ErrorFn, CompleteFn } from '@angular/fire/auth';
-import { Observable, of } from 'rxjs';
-import { User as NovaUser } from 'src/app/models/user';
 
 interface CustomAuth extends Partial<Auth> {
   signInWithEmailAndPassword: jasmine.Spy<jasmine.Func>;
   signOut: jasmine.Spy<jasmine.Func>;
 }
 
-describe('UserService', () => {
-  let userService: UserService;
+describe('AuthService', () => {
+  let authService: AuthService;
   let authMock: CustomAuth;
 
   beforeEach(() => {
@@ -20,16 +18,16 @@ describe('UserService', () => {
 
     TestBed.configureTestingModule({
       providers: [
-        UserService,
+        AuthService,
         { provide: Auth, useValue: authMock }
       ]
     });
-    userService = TestBed.inject(UserService);
+    authService = TestBed.inject(AuthService);
   });
 
 
   it('should be created', () => {
-    expect(userService).toBeTruthy();
+    expect(authService).toBeTruthy();
   });
 
 

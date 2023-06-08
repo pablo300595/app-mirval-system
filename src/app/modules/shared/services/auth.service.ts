@@ -16,7 +16,7 @@ interface Credentials {
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class AuthService {
 
   constructor(private auth: Auth) { }
 
