@@ -16,7 +16,7 @@ describe('AuthService', () => {
     // authMock = jasmine.createSpyObj('authMock', ['signInWithEmailAndPassword', 'signOut']);
     // authMock.signInWithEmailAndPassword.and.returnValue(Promise.resolve({} as UserCredential));
     // authMock.signOut.and.returnValue(Promise.resolve());
-
+    const spy = jasmine.createSpyObj('Auth', ['']);
 
     TestBed.configureTestingModule({
       providers: [
