@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Observable, from } from 'rxjs';
+import { Observable, from, of } from 'rxjs';
 import {
   Auth,
-  UserCredential, 
-  signInWithEmailAndPassword, 
+  UserCredential,
+  signInWithEmailAndPassword,
   authInstance$,
   signOut
 } from '@angular/fire/auth';
+import { Student } from 'src/app/models/student';
 
 interface Credentials {
-  email: string; 
+  email: string;
   password: string;
 }
 
