@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { Observable, concat, from, fromEvent, merge, of } from 'rxjs';
-import { concatMap, mergeMap, tap } from 'rxjs/operators';
+import { Observable, concat, from, fromEvent, interval, merge, of } from 'rxjs';
+import { concatMap, delay, mergeMap, skipUntil, tap } from 'rxjs/operators';
 import { Student } from './models/student';
 import { AuthService } from './modules/shared/services/auth.service';
 import { PracticeObservableService } from './modules/shared/services/practice-observable.service';
@@ -14,6 +14,11 @@ export class AppComponent {
   title = 'app-mirval-system';
   realList: Student[] = [];
   @ViewChild('superText') supertext: ElementRef = new ElementRef('');
+
+  apiResponse$ = of('API Response Data').pipe(delay(10000));
+
+  source$ = interval(1000);
+
 
   constructor(private practiceObservableService: PracticeObservableService) {
     console.log('New version 0.0.1');
@@ -52,12 +57,42 @@ export class AppComponent {
     //     this.realList = updatedList;
     //   }
     // );
+
+    // this.practiceObservableService.operation3().subscribe();
+    
+    // const susA = this.practiceObservableService.operation5().subscribe(
+    //   {
+    //     next(res) {console.log(res)},
+    //     error(err) {console.log(err)},
+    //     complete() {
+    //       console.log('susA')
+    //     }
+    //   }
+    // );
+
+    // const susB = this.practiceObservableService.operation5().subscribe(
+    //   {
+    //     next(res) {console.log(res)},
+    //     error(err) {console.log(err)},
+    //     complete() {
+    //       console.log('susB')
+    //     }
+    //   }
+    // );
+
+    // const skippedSource$ = this.source$.pipe(
+    //   skipUntil(this.apiResponse$)
+    // );
+
+    // Subscribe to the skippedSource$ Observable
+    // skippedSource$.subscribe(value => console.log(value));
+    // this.practiceObservableService.operation8();
+    // this.practiceObservableService.operation9();
+    this.practiceObservableService.operation10();
   }
 
   ngAfterViewInit() {
-    console.log('ngAfterViewInit hook');
-    console.log(this.supertext.nativeElement);
-    let mouseMoves = fromEvent<MouseEvent>(this.supertext.nativeElement, 'onclick');
-    mouseMoves.subscribe(event => console.log(event));
+    let mouseMoves = fromEvent<MouseEvent>(this.supertext.nativeElement, 'click');
+    mouseMoves.subscribe((event) => console.log(event));
   }
 }
