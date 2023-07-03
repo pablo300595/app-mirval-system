@@ -19,6 +19,7 @@ import { configReducer } from './modules/auth/store/reducers/config.reducer';
 import { environment } from './environment';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './modules/auth/store/effects/auth.effects';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { AuthEffects } from './modules/auth/store/effects/auth.effects';
     }),
     StoreDevtoolsModule.instrument(environment.FB_DEVTOOLS_CONFIG),
     NavbarComponent,
+    CardComponent,
     EffectsModule.forRoot([AuthEffects])
   ],
   providers: [],
