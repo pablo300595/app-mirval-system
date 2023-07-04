@@ -18,7 +18,7 @@ export class AppComponent {
   apiResponse$ = of('API Response Data').pipe(delay(10000));
 
   source$ = interval(1000);
-
+  boxes: HTMLElement[] = [];
 
   constructor(private practiceObservableService: PracticeObservableService) {
     console.log('New version 0.0.1');
@@ -95,4 +95,15 @@ export class AppComponent {
     let mouseMoves = fromEvent<MouseEvent>(this.supertext.nativeElement, 'click');
     mouseMoves.subscribe((event) => console.log(event));
   }
+
+  // Challenge #5
+  // addBox() {
+  //   const newBox = document.createElement('DIV');
+  //   newBox.classList.add("box");
+  //   this.boxes.push(newBox);
+  //   console.log('this.boxes')
+  //   console.log(this.boxes)
+  //   console.log('newBox')
+  //   console.log(newBox)
+  // }
 }

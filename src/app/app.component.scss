@@ -1,24 +1,45 @@
-.container {
-    display: inline-grid;
-    // grid-template-columns: 33% 33% 33%;
-    grid-template-rows: repeat(5, 1fr);
-    grid-template-columns: repeat(5, 1fr);
-    // column-gap: 20px;
-    // row-gap: 20px;
-    width: 100%;
-}
+// .container {
+//     display: grid;
+//     // grid-template-columns: 33% 33% 33%;
+//     // grid-template-rows: [header-start] 1fr [content-start] 1fr [footer-start] 1fr [footer-end];
+//     // grid-template-rows: repeat(5, 1fr);
+//     // grid-template-columns: repeat(5, 1fr);
+//     // grid-template-columns: [column-start] 1fr [middle-column] 1fr [end-column];
+//     // column-gap: 20px;
+//     // row-gap: 20px;
+//     // grid-template-rows: repeat(2, 1fr);
+//     // grid-auto-rows: 200px;
+//     // grid-auto-columns: 200px;
+//     // grid-auto-flow: column;
+//     // grid-auto-flow: row dense;
+//     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); //fill as many column as posible taking as much available space as posible
+//     // grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); //fill as many column as posible
+//     // grid-template-columns: repeat(3, minmax(200px, 500px));
+//     // grid-template-areas: 
+//     //     "navbar navbar"
+//     //     "main sidebar"
+//     //     "footer footer"
+//     // ;
+//     // grid-template-areas: 
+//     //     ". a a ."
+//     //     "b c c d"
+//     //     "b e e h"
+//     //     "f f g h"
+//     // ;
+//     width: 100%;
+// }
 
-.box {
-    font-size: 1.5em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    font-family: sans-serif;
-}
-p {
-    font-size: 1.5em;
-}
+// .box {
+//     font-size: 1.5em;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     font-size: 1rem;
+//     font-family: sans-serif;
+// }
+// p {
+//     font-size: 1.5em;
+// }
 
 // Challenge #2
 // .container {
@@ -83,58 +104,226 @@ p {
 //     box-sizing: border-box;
 // }
 
+// Challenge #5
+// .box {
+//     background-color: #ff5722;
+//     min-height: 20px;
+// }
+
+// #container {
+//     margin: 0 auto;
+//     width: 500px;
+//     height: 1000px;
+//     display: grid;
+//     grid-auto-rows: 100px;
+//     grid-template-columns: repeat(3, 1fr);
+//     column-gap: 10px;
+//     row-gap: 10px;
+// }
+
+// Challenge #6
+// .container {
+//     display: grid;
+//     grid-template-columns: repeat(3, 1fr);
+//     grid-template-rows: repeat(3, 1fr);
+//     grid-template-areas: 
+//         "ad main aside"
+//         "ad main aside"
+//         "footer footer footer"
+//     ;
+//     width: 100%;
+//     height: 50%;
+// }
+
+// #ad {
+//     grid-area: ad;
+//     background-color: brown;
+// }
+
+// #main-content {
+//     background-color: blue;
+//     grid-area: main;
+// }
+
+// #aside {
+//     grid-area: aside;
+//     background-color: purple;
+// }
+
+// #footer {
+//     grid-area: footer;
+//     background-color: green;
+// }
+
+// @media screen and (max-width: 700px) {
+//     .container {
+//         grid-template-areas: 
+//             "main main aside"
+//             "main main aside"
+//             "ad footer footer"
+//         ;
+//     }
+// }
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(12, 1fr);
+    row-gap: 20px;
+    column-gap: 20px;
+    grid-template-areas:
+        "header"
+        "navbar"
+        "content"
+        "sidebar"
+        "ad"
+        "footer"
+    ;
+    width: 100%;
+}
+
+.header {
+    background-color: purple;
+    grid-area: header;
+}
+
+.navbar {
+    background-color: orange;
+    grid-area: navbar;
+}
+
+.content {
+    background-color: greenyellow;
+    grid-area: content;
+}
+
+.sidebar {
+    background-color: blue;
+    grid-area: sidebar;
+}
+
+.ad {
+    background-color: aliceblue;
+    grid-area: ad;
+}
+
+.footer {
+    background-color: gray;
+    grid-area: footer;
+}
+
+@media (min-width: 700px) {
+    .container {
+        grid-template-columns: 1fr 3fr;
+        grid-template-areas: 
+            "header header"
+            "navbar navbar"
+            "sidebar content"
+            "ad footer"
+        ;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        grid-template-columns: 1fr 4fr 1fr;
+        grid-template-areas: 
+            "header header header"
+            "navbar content sidebar"
+            "navbar content ad"
+            "footer footer footer"
+        ;
+    }
+
+}
+
+
+//Boxes-----------------------------------------------------------------s
 #first {
     background-color: rgb(255, 0, 0);
-    grid-row: 2 / span 2;
+    // grid-area: footer;
+    // grid-column: span 2;
+    // grid-column: column-start / column-end;
+    // grid-row: 2 / span 2;
     // grid-row: 2/4;
     // grid-column: 1/3;
-    grid-column: 1/ span 2;
+    // grid-column: 1/ span 2;
     // grid-row-start: 1;
     // grid-row-end: 3;
-    // grid-column-start: 2;
+    // grid-column-start: 3;
     // grid-column-end: 4;
+    // grid-area: a;
 }
 
 #second {
     background-color: rgb(89, 255, 0);
-    grid-row: 1/4;
-    grid-column: 3/4;
+    // grid-row: 1/4;
+    // grid-column: 3/4;
     // grid-column-start: 0;
     // grid-row-start: 2;
+    // grid-area: b;
 }
 
 #third {
     background-color: rgb(105, 33, 237);
-    grid-row: 4/5;
-    grid-column: 2/5;
+    // grid-row: 4/5;
+    // grid-column: 2/5;
+    // grid-area: c;
 }
 
 #fourth {
     background-color: rgb(2, 14, 14);
     color: white;
-    grid-area: 2/4/4/6;
+    // grid-area: d;
+    // grid-area: 2/4/4/6;
 }
 
 #fifth {
     background-color: rgb(210, 44, 165);
+    // grid-area: e;
 }
 
 #sixth {
     background-color: rgb(252, 231, 0);
+    // grid-area: f;
 }
 
 #seventh {
     background-color: rgb(19, 95, 95);
+    // grid-column: 2/3;
+    // grid-area: g;
 }
 
 #eight {
     background-color: rgb(195, 57, 103);
+    // grid-area: h;
 }
 
 #nineth {
     background-color: rgb(200, 102, 73);
+    // grid-area: navbar;
+    // grid-column: span 2;
+    // grid-row: 3/4;
 }
 
 #tenth {
     background-color: rgb(61, 162, 162);
 }
+
+// @media screen and (max-width: 1500px) {
+//     .container {
+//         grid-template-columns: repeat(3, 1fr);
+//     }
+// }
+
+// @media screen and (max-width: 800px) {
+//     .container {
+//         grid-template-columns: repeat(2, 1fr);
+//     }
+// }
+
+// @media screen and (max-width: 500px) {
+//     .container {
+//         grid-template-columns: 1fr;
+//     }
+// }
