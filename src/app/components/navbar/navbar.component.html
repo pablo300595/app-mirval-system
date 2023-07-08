@@ -1,9 +1,21 @@
-<nav>
+<!-- <nav>
     <img class="logo" src="{{ brandLogo.url }}" alt="{{ brandLogo.name }}" routerLink="/home">
     <ul>
         <li routerLink="/home"><a>Home</a></li>
         <li routerLink="/home/about"><a>About</a></li>
         <li routerLink="home/contact"><a>Contact</a></li>
+        <li *ngIf="(user$ | async)?.currentUser?.email" routerLink="/config/auth"><a>Profile</a></li>
+        <li *ngIf="(user$ | async)?.currentUser?.email" (click)="logout()"><a>Sign out</a></li> 
+    </ul>
+</nav> -->
+
+<nav>
+    <img class="logo" src="{{ brandLogo.url }}" alt="{{ brandLogo.name }}" routerLink="/home">
+    <ul>
+        <li routerLink="/home"><a>Home</a></li>
+        <li routerLink="/home/about"><a>About</a></li>
+        <!-- <li routerLink="home/contact"><a>Contact</a></li> -->
+        <li *ngIf="(user$ | async)?.currentUser?.email" routerLink="videogame/levels-page"><a>Levels</a></li>
         <li *ngIf="(user$ | async)?.currentUser?.email" routerLink="/config/auth"><a>Profile</a></li>
         <li *ngIf="(user$ | async)?.currentUser?.email" (click)="logout()"><a>Sign out</a></li> 
     </ul>

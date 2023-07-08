@@ -9,6 +9,7 @@ import { Image } from 'src/app/models/image';
 })
 export class CardComponent {
   @Input() title: string = '';
+  @Input() price: string = '';
   @Input() description: string = '';
   @Input() cardImage: Image = {
     name: 'water-dragon', 

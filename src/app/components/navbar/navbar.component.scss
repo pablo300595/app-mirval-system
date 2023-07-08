@@ -1,19 +1,17 @@
 @import './../../mixins';
 
 nav {
-    @include width-height(100%, 10%);
-    @include basic-flex(flex-end, space-between);
-    @include fixed-container-top();
     @include background-color-fontFamily(rgb(23.0,24.0,24.0), white, 'Gill Sans');
-    flex-direction: row;
-    z-index: 999;
-    /* make sure it is above other elements */
+    @include width-height(100%, 100px);
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-areas: "logo logo logo . . routes routes routes routes routes";
 
     .logo {
-        @include width-height(10%, 100%);
-        @include basic-flex(flex-end, center);
+        @include width-height(180px, 100%);
+        grid-area: logo;
         img {
-            @include width-height(30px, 30px);
+            @include width-height(100%, 100%);
         }
     }
 
@@ -22,16 +20,14 @@ nav {
     }
 
     ul {
-        // background-color: #e03b3b;
-        @include width-height(30%, 100%);
-        @include basic-flex(flex-end, center);
         @include clear-margin-settings();
+        @include basic-flex(center, space-around);
         flex-direction: row;
+        grid-area: routes;
 
         li {
             @include width-height(100%, 100%);
             @include basic-flex(center, center);
-            // background-color: #cb9d9d;
         }
 
         li:hover {
@@ -41,23 +37,64 @@ nav {
         }
     }
 }
+// nav {
+//     @include width-height(100%, 10%);
+//     @include basic-flex(flex-end, space-between);
+//     @include fixed-container-top();
+//     @include background-color-fontFamily(rgb(23.0,24.0,24.0), white, 'Gill Sans');
+//     flex-direction: row;
+//     z-index: 999;
+//     /* make sure it is above other elements */
 
-a {
-    @include background-color-fontFamily(none, white, 'Gill Sans');
-    text-decoration: none;
-}
+//     .logo {
+//         @include width-height(10%, 100%);
+//         @include basic-flex(flex-end, center);
+//         img {
+//             @include width-height(30px, 30px);
+//         }
+//     }
+
+//     .logo:hover {
+//         cursor: pointer;
+//     }
+
+//     ul {
+//         // background-color: #e03b3b;
+//         @include width-height(30%, 100%);
+//         @include basic-flex(flex-end, center);
+//         @include clear-margin-settings();
+//         flex-direction: row;
+
+//         li {
+//             @include width-height(100%, 100%);
+//             @include basic-flex(center, center);
+//             // background-color: #cb9d9d;
+//         }
+
+//         li:hover {
+//             cursor: pointer;
+//             opacity: 0.9;
+//             background-color: black;
+//         }
+//     }
+// }
+
+// a {
+//     @include background-color-fontFamily(none, white, 'Gill Sans');
+//     text-decoration: none;
+// }
 
 // mobile devices
-@media screen and (max-width: 767px) {
-    nav {
-        .logo {
-            @include width-height(40%, 100%);
-            img {
-                @include width-height(30px, 30px);
-            }
-        }
-        ul {
-            @include width-height(50%, 100%);
-        }
-    }
-}
+// @media screen and (max-width: 767px) {
+//     nav {
+//         .logo {
+//             @include width-height(40%, 100%);
+//             img {
+//                 @include width-height(30px, 30px);
+//             }
+//         }
+//         ul {
+//             @include width-height(50%, 100%);
+//         }
+//     }
+// }

@@ -25,6 +25,11 @@ const routes: Routes = [
     canActivate: [configGuard]
   },
   {
+    path: 'videogame',
+    loadChildren: () => import('./modules/videogame/videogame.module').then(m => m.VideogameModule),
+    // canActivate: []
+  },
+  {
     path: '**',
     redirectTo: 'auth'
   }

@@ -15,109 +15,186 @@ body {
 
 app-root {
     @include width-height(inherit, inherit);
-    display: flex;
+    // background-color: #881bcb;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+        "nav nav nav nav nav nav"
+        "main main main main main main"
+        "main main main main main main"
+        "main main main main main main"
+        "main main main main main main"
+        "footer footer footer footer footer footer"
+    ;
 
-    app-login-page {
-        @include basic-flex(center, center);
-        @include width-height(inherit, inherit);
-        // background-color: blue;
-
-        .page-content {
-            @include basic-flex(center, center);
-            @include width-height(inherit, inherit);
-            background: linear-gradient(60deg, #dddaec, rgb(79, 101, 214));
-            font-family: Roboto;
-            // background-color: rgb(130, 130, 172);
-
-            login-card {
-                @include basic-flex(center, center);
-                @include width-height(25%, 60%);
-                background-color: rgb(220, 220, 238);
-                border-radius: 0.2em;
-                box-shadow: 0 0 1em rgba(0, 0, 0, 0.8);
-            }
-        }
-
-    }
-
-    app-register-page {
-        @include basic-flex(center, center);
-        @include width-height(inherit, inherit);
-        // background-color: rgb(255, 0, 0);
-
-        .page-content {
-            @include basic-flex(center, center);
-            @include width-height(inherit, inherit);
-            background: linear-gradient(60deg, #dddaec, rgb(79, 101, 214));
-            font-family: Roboto;
-
-            register-card {
-                @include basic-flex(center, center);
-                @include width-height(25%, 60%);
-                background-color: rgb(220, 220, 238);
-                border-radius: 0.2em;
-                box-shadow: 0 0 1em rgba(0, 0, 0, 0.8);
-            }
-        }
-    }
-
-    app-about-page {
-        @include width-height(inherit, inherit);
-        @include width-height(inherit, inherit);
-        background: linear-gradient(180deg, #0c0432f7, rgb(6, 10, 32));
-    }
-
-    app-contact-page {
-        @include width-height(inherit, inherit);
-        @include width-height(inherit, inherit);
-        background: linear-gradient(180deg, #0c0432f7, rgb(6, 10, 32));
-    }
-
-    app-home-page {
-        @include width-height(inherit, inherit);
-        @include width-height(inherit, inherit);
-        background: linear-gradient(180deg, #0c0432f7, rgb(6, 10, 32));
-    }
 }
+
+navbar {
+    grid-area: nav;
+    background: linear-gradient(180deg, #0c0432f7, rgb(6, 10, 32));
+}
+
+main {
+    @include width-height(100%, 1fr);
+    @include basic-flex(center, flex-start);
+    background: linear-gradient(180deg, #0c0432f7, rgb(6, 10, 32));
+    grid-area: main;
+    overflow-y: auto;
+}
+
+app-levels-page {
+    @include width-height(inherit, 1fr);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+app-home-page {
+    @include width-height(100%, 100%);
+    @include basic-flex(center, flex-start);
+    background: linear-gradient(180deg, #0c0432f7, rgb(6, 10, 32));
+}
+
+footer {
+    @include width-height(100%, 1fr);
+    background-color: brown;
+    grid-area: footer;
+}
+
+card {
+    position: relative;
+    height: 16.5em;
+    box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 120ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    padding: 0.5em;
+    padding-bottom: 3.4em;
+    margin: 0 5px;
+}
+
+// app-root {
+//     @include width-height(inherit, inherit);
+//     display: flex;
+
+//     app-login-page {
+//         @include basic-flex(center, center);
+//         @include width-height(inherit, inherit);
+//         // background-color: blue;
+
+//         .page-content {
+//             @include basic-flex(center, center);
+//             @include width-height(inherit, inherit);
+//             background: linear-gradient(60deg, #dddaec, rgb(79, 101, 214));
+//             font-family: Roboto;
+//             // background-color: rgb(130, 130, 172);
+
+//             login-card {
+//                 @include basic-flex(center, center);
+//                 @include width-height(25%, 60%);
+//                 background-color: rgb(220, 220, 238);
+//                 border-radius: 0.2em;
+//                 box-shadow: 0 0 1em rgba(0, 0, 0, 0.8);
+//             }
+//         }
+
+//     }
+
+//     app-register-page {
+//         @include basic-flex(center, center);
+//         @include width-height(inherit, inherit);
+//         // background-color: rgb(255, 0, 0);
+
+//         .page-content {
+//             @include basic-flex(center, center);
+//             @include width-height(inherit, inherit);
+//             background: linear-gradient(60deg, #dddaec, rgb(79, 101, 214));
+//             font-family: Roboto;
+
+//             register-card {
+//                 @include basic-flex(center, center);
+//                 @include width-height(25%, 60%);
+//                 background-color: rgb(220, 220, 238);
+//                 border-radius: 0.2em;
+//                 box-shadow: 0 0 1em rgba(0, 0, 0, 0.8);
+//             }
+//         }
+//     }
+
+//     app-about-page {
+//         @include width-height(inherit, inherit);
+//         @include width-height(inherit, inherit);
+//         background: linear-gradient(180deg, #0c0432f7, rgb(6, 10, 32));
+//     }
+
+//     app-contact-page {
+//         @include width-height(inherit, inherit);
+//         @include width-height(inherit, inherit);
+//         background: linear-gradient(180deg, #0c0432f7, rgb(6, 10, 32));
+//     }
+
+//     app-home-page {
+//         @include width-height(inherit, inherit);
+//         @include width-height(inherit, inherit);
+//         background: linear-gradient(180deg, #0c0432f7, rgb(6, 10, 32));
+//     }
+// }
 
 // mobile devices
-@media screen and (max-width: 767px) {
-    app-root {
-        app-login-page {
-            .page-content {
-                login-card {
-                    @include width-height(80%, 60%);
-                }
-            }
-        }
+// @media screen and (max-width: 767px) {
+//     app-root {
+//         app-login-page {
+//             .page-content {
+//                 login-card {
+//                     @include width-height(80%, 60%);
+//                 }
+//             }
+//         }
 
-        app-register-page {
-            .page-content {
-                register-card {
-                    @include width-height(80%, 60%);
-                }
-            }
-        }
+//         app-register-page {
+//             .page-content {
+//                 register-card {
+//                     @include width-height(80%, 60%);
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// tabled devices
+// @media screen and (min-width: 768px) and (max-width: 1023px) {
+//     app-root {
+//         app-login-page {
+//             .page-content {
+//                 login-card {
+//                     @include width-height(70%, 50%);
+//                 }
+//             }
+//         }
+//         app-register-page {
+//             .page-content {
+//                 register-card {
+//                     @include width-height(70%, 50%);
+//                 }
+//             }
+//         }
+//     }
+// }
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    app-levels-page {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-// tabled devices
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    app-root {
-        app-login-page {
-            .page-content {
-                login-card {
-                    @include width-height(70%, 50%);
-                }
-            }
-        }
-        app-register-page {
-            .page-content {
-                register-card {
-                    @include width-height(70%, 50%);
-                }
-            }
-        }
+@media screen and (max-width: 767px) {
+    app-levels-page {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 
