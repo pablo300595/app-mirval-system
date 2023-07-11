@@ -12,8 +12,8 @@ h2 {
 
 .register-card {
     @include basic-flex(center, center);
-    @include width-height(100%, 100%);
-    background-color: inherit;
+    @include width-height(50%, 80%);
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.8);
 
     .register-card-header {
         @include basic-flex(center, center);
@@ -21,7 +21,6 @@ h2 {
         background-image: url('https://storage.googleapis.com/landscapes-bucket/assets/magician.jpg');
         background-size: cover;
         background-position: auto;
-        // background-color: black;
         color: white;
     }
 

@@ -5,6 +5,15 @@
     justify-content: $justify;
 }
 
+@mixin basic-flex-wh($align, $justify, $width, $height) {
+    align-items: $align;
+    display: flex;
+    flex-direction: column;
+    justify-content: $justify;
+    width: $width;
+    height: $height;
+}
+
 @mixin width-height($width, $height) {
     width: $width;
     height: $height;

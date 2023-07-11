@@ -15,6 +15,7 @@ body {
 
 app-root {
     @include width-height(inherit, inherit);
+    font-family: Roboto;
     // background-color: #881bcb;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -78,6 +79,30 @@ card {
     padding-bottom: 3.4em;
     margin: 0 5px;
 }
+
+app-login-page {
+    @include basic-flex-wh(center, center, 100%, 100%);
+    background: linear-gradient(60deg, #dddaec, rgb(79, 101, 214));
+    .page-content {
+        @include basic-flex-wh(inherit, inherit, inherit, inherit);
+        login-card {
+            @include basic-flex-wh(inherit, inherit, inherit, inherit);
+        }
+    }
+}
+
+app-register-page {
+    @include basic-flex-wh(center, center, 100%, 100%);
+    background: linear-gradient(60deg, #dddaec, rgb(79, 101, 214));
+    .page-content {
+        @include basic-flex-wh(inherit, inherit, inherit, inherit);
+        register-card {
+            @include basic-flex-wh(inherit, inherit, inherit, inherit);
+        }
+    }
+}
+
+
 
 // app-root {
 //     @include width-height(inherit, inherit);

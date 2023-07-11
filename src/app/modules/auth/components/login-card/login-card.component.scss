@@ -11,9 +11,9 @@ h2 {
 }
 
 .login-card {
-    @include basic-flex(center, center);
-    @include width-height(100%, 100%);
-    background-color: inherit;
+    @include basic-flex(inherit, inherit);
+    @include width-height(50%, 80%);
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.8);
 
     .login-card-header {
         @include basic-flex(center, center);
@@ -21,7 +21,6 @@ h2 {
         background-image: url('https://storage.googleapis.com/landscapes-bucket/assets/builder-dragon.jpeg');
         background-size: cover;
         background-position: auto;
-        // background-color: black;
         color: white;
     }
 
